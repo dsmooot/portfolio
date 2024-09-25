@@ -3,9 +3,11 @@
 import { useRef } from 'react'
 import gsap from '@/core/lib/gsap'
 import { TransitionRouter } from 'next-transition-router'
+import { useEvent } from '@/core/context/EventProvider'
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
   const overlay = useRef<HTMLDivElement | null>(null)
+  const { triggerEvent } = useEvent()
 
   return (
     <TransitionRouter
@@ -24,6 +26,11 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
             opacity: 1,
             duration: 0.5,
             ease: 'power1.inOut',
+            onComplete: () => {
+              if (to === '/') {
+                triggerEvent({ type: 'loaded' })
+              }
+            },
           },
         )
 

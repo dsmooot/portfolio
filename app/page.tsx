@@ -2,18 +2,21 @@
 
 import { CameraControls as _CameraControls } from 'three-stdlib'
 import gsap, { useGSAP } from '@/core/lib/gsap'
-import { useRef } from 'react'
+import { useLayoutEffect, useMemo, useRef } from 'react'
 import { useEvent } from '@/core/context/EventProvider'
 import Button from '@/components/dom/common/Button'
 import { Body, Tagline, Title } from '@/components/dom/common/Themed'
 import { useDeviceType } from '@/core/hooks/useDeviceType'
-import GitIcon from '@/components/dom/icons/GitIcon'
-import EmailIcon from '@/components/dom/icons/EmailIcon'
 
 const Home = () => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { triggerEvent } = useEvent()
+  const { eventData, triggerEvent } = useEvent()
   const { isMobile, isTablet } = useDeviceType()
+  const tlRef = useRef(null)
+
+  const loaded = useMemo(() => {
+    if (eventData) return eventData.type === 'loaded'
+  }, [eventData])
 
   const handleLeave = () => {
     return new Promise((resolve) => {
@@ -32,9 +35,9 @@ const Home = () => {
   }
 
   useGSAP(() => {
-    if (!containerRef.current) return
+    if (!containerRef.current || !loaded) return
 
-    const tl = gsap.timeline()
+    tlRef.current = gsap.timeline()
 
     gsap.set('#dustin .char:not(.char-d)', { opacity: 0, x: -50 })
     gsap.set('#smoote .char:not(.char-s)', { opacity: 0, x: -50 })
@@ -50,16 +53,17 @@ const Home = () => {
     })
     gsap.set('#fadeout', { opacity: 0 })
 
-    tl.to(containerRef.current, {
-      opacity: 1,
-      duration: 1,
-      ease: 'power1.inOut',
-      onStart: () => {
-        triggerEvent({
-          type: 'home-transition-in',
-        })
-      },
-    })
+    tlRef.current
+      .to(containerRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+        onStart: () => {
+          triggerEvent({
+            type: 'home-transition-in',
+          })
+        },
+      })
       .to('#smoote', { y: 0, duration: 0.1, ease: 'ease.inOut' }, 0.5)
       .to('#dustin .char:not(.char-d)', { x: 0, opacity: 1, duration: 0.1, stagger: 0.05, ease: 'ease.inOut' }, 0.7)
       .to('#smoote .char:not(.char-s)', { x: 0, opacity: 1, duration: 0.1, stagger: 0.05, ease: 'ease.inOut' }, 0.7)
@@ -70,8 +74,8 @@ const Home = () => {
         { display: 'inline', opacity: 1, duration: 0.1, stagger: 0.01, ease: 'ease.inOut' },
         1,
       )
-      .to('#fadeout', { opacity: 1, duration: 0.5, ease: 'ease.inOut' }, 1.1)
-      .to('#about', { opacity: 1, y: 0, duration: 0.5, ease: 'ease.inOut' }, 1.1)
+      .to('#fadeout', { opacity: 1, duration: 0.3, ease: 'ease.inOut' }, 1.1)
+      .to('#about', { opacity: 1, y: 0, duration: 0.3, ease: 'ease.inOut' }, 1.1)
       .set('#buttons', { opacity: 1 })
       .to(
         '.cta',
@@ -94,7 +98,7 @@ const Home = () => {
         },
         1.2,
       )
-  }, [isMobile])
+  }, [isMobile, loaded])
 
   return (
     <div ref={containerRef} className='flex w-full flex-col opacity-0'>
