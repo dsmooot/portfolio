@@ -28,16 +28,21 @@ You can find a comprehensive list of my technical skills, work experience, and e
 To run the project locally, follow these steps:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/portfolio-site.git
-   ```
+
+```bash
+git clone https://github.com/your-username/portfolio-site.git
+```
+
 2. Install deps:
-  ```bash
-  yarn install
-  ```
+
+```bash
+yarn install
+```
+
 3. Run the project locally:
-  ```bash
-  yarn dev
-  ```
+
+```bash
+yarn dev
+```
 
 Thanks for checking out my portfolio!
