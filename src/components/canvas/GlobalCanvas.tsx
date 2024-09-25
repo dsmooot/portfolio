@@ -1,14 +1,12 @@
 'use client'
 
-import { MutableRefObject, ReactNode, useRef } from 'react'
+import { MutableRefObject, ReactNode, Suspense, useEffect, useRef, useState } from 'react'
 import { GlobalCanvas, SmoothScrollbar } from '@14islands/r3f-scroll-rig'
-import { useDeviceType } from '@/core/hooks/useDeviceType'
 interface SceneProps {
   children: ReactNode
 }
 export default function Scene({ children, ...props }: SceneProps) {
   const eventSource = useRef(null)
-  const { isMobile } = useDeviceType()
 
   return (
     <div className='relative size-full' ref={eventSource}>

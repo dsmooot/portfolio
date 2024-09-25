@@ -1,7 +1,7 @@
 'use client'
-import { Body, Subtitle, Tagline, Title } from '@/components/dom/common/Themed'
+import { Body, Title } from '@/components/dom/common/Themed'
 import { useGSAP } from '@gsap/react'
-import { use, useRef } from 'react'
+import { useRef } from 'react'
 import { CameraControls as _CameraControls } from 'three-stdlib'
 import gsap from '@/core/lib/gsap'
 import Footer from '@/components/dom/common/Footer'
@@ -16,7 +16,6 @@ const Contact = () => {
   const router = useTransitionRouter()
   const containerRef = useRef<HTMLDivElement>(null)
   const headerContainerRef = useRef<HTMLDivElement>(null)
-  const { isMobile, isTablet } = useDeviceType()
 
   useGSAP(() => {
     if (!containerRef.current) return
@@ -53,7 +52,7 @@ const Contact = () => {
   }, [containerRef])
   return (
     <section ref={containerRef} className='relative flex h-screen w-full flex-col items-center'>
-      <div className='flex w-full max-w-screen-xl flex-col items-start justify-center gap-y-16 p-4 md:p-8 lg:p-16'>
+      <div className='flex w-full max-w-screen-xl flex-col items-start justify-center gap-y-4 p-4 md:gap-y-16 md:p-8 lg:p-16'>
         <div ref={headerContainerRef} className='relative flex w-full flex-row justify-center'>
           <div className='flex w-full flex-col gap-y-8'>
             <Title id='info'>
