@@ -7,8 +7,6 @@ import * as THREE from 'three'
 import Gramps from '@/components/canvas/models/Gramps'
 import {
   CameraControls,
-  CloudInstance,
-  Clouds,
   Float,
   MeshDistortMaterial,
   MeshWobbleMaterial,
@@ -20,12 +18,10 @@ import { Plane } from '@react-three/drei'
 import MarbleShader from '@/components/canvas/shaders/MarbleShader/MarbleShader'
 import { usePathname } from 'next/navigation'
 import ProjectPlane from './pages/projects/ProjectPlane'
-import Me from './models/Me'
-import Me2 from './models/Me2'
-import Me3 from './models/Me3'
+
 import { easing } from 'maath'
 import { useDeviceType } from '@/core/hooks/useDeviceType'
-import Me4 from './models/Me4'
+import Me from '@/components/canvas/models/Me'
 import gsap from '@/core/lib/gsap'
 
 const Scene = ({ scrollState, ...props }) => {
@@ -45,15 +41,13 @@ const Scene = ({ scrollState, ...props }) => {
       mesh.material.transparent = true
       mesh.material.needsUpdate = true
     }
-  }, [character.current])
 
-  useEffect(() => {
     if (shader.current) {
       shader.current.opacity = 1
       shader.current.transparent = true
       shader.current.needsUpdate = true
     }
-  }, [shader.current])
+  }, [])
 
   // useEffect(() => {
   //   if (controls && character.current) {
@@ -61,7 +55,7 @@ const Scene = ({ scrollState, ...props }) => {
   //     //@ts-ignore
   //     controls.setOrbitPoint(x, y, z)
   //   }
-  // }, [controls, character])
+  // }, [controls])
 
   useFrame(({ camera, clock, pointer, viewport }, delta) => {
     if (pathname === '/') {
@@ -119,22 +113,13 @@ const Scene = ({ scrollState, ...props }) => {
           <MarbleShader attach='material' ref={shader} transparent />
         </Plane>
         <group position={isMobile ? [0, -1.1, -2] : isTablet ? [1, -3, -3] : [4, -3, -3]} scale={isMobile ? 0.7 : 1}>
-          {/* <Me ref={character} {...props} scale={3} position={[0, -3, -3]} rotation={[0, (11 * Math.PI) / 6, 0]} /> */}
-          {/* <Me2
-            ref={character}
-            {...props}
-            scale={3}
-            position={[0, 0, 0]}
-            rotation={isMobile ? [0, 0, 0] : [0, (11 * Math.PI) / 6, 0]}
-          /> */}
-          <Me4
+          <Me
             ref={character}
             {...props}
             scale={3}
             position={[0, 0, 0]}
             rotation={isMobile ? [0, 0, 0] : [0, (11 * Math.PI) / 6, 0]}
           />
-          {/* <Me3 ref={character} {...props} scale={3} position={[0, 0.5, 0]} rotation={[0, 0, 0]} /> */}
           <Float speed={6} rotationIntensity={0} floatIntensity={0.3}>
             <Sphere
               ref={sphereRef}

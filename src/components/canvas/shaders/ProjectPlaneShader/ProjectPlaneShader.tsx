@@ -13,7 +13,7 @@ import { is } from '@react-three/fiber/dist/declarations/src/core/utils'
 
 interface ProjectPlaneShaderProps {
   texture?: THREE.Texture
-  [key: string]: any // For any additional props
+  [key: string]: any
 }
 
 const ProjectPlaneShaderImpl = shaderMaterial(
@@ -86,7 +86,6 @@ const ProjectPlaneShader = forwardRef<ShaderMaterial, ProjectPlaneShaderProps>((
 
   useLayoutEffect(() => {
     if (texture) {
-      console.log('texture: ', texture)
       localRef.current.uTexture = texture
     }
   }, [texture])
@@ -130,5 +129,7 @@ const ProjectPlaneShader = forwardRef<ShaderMaterial, ProjectPlaneShaderProps>((
     />
   )
 })
+
+ProjectPlaneShader.displayName = 'ProjectPlaneShader'
 
 export default ProjectPlaneShader

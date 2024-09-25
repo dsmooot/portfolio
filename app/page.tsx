@@ -105,7 +105,7 @@ const Home = () => {
         <div className='flex size-full max-w-screen-xl flex-col justify-between'>
           <div
             id='fadeout'
-            className='absolute -bottom-4 left-0 z-0 h-[50vh] w-full bg-gradient-to-t from-[#e3e3de] via-[#e8e8e1] via-[80%] to-transparent md:h-[30vh] xl:h-[25vh] xl:via-[60%]'
+            className='absolute -bottom-4 left-0 z-0 h-[50vh] w-full bg-gradient-to-t from-[#e3e3de] via-80% to-transparent md:h-[30vh] xl:h-[25vh] xl:via-60%'
           ></div>
           <div className='flex w-full flex-col items-start justify-start'>
             <Title id='dustin'>

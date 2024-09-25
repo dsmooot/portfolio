@@ -16,7 +16,7 @@ const Footer = ({ buttons = [] }: FooterProps) => {
     <div className='fixed bottom-0 left-0 flex w-full flex-row items-center justify-center gap-x-8 pb-8 lg:justify-end lg:pr-24'>
       <div
         id='fadeout'
-        className={`from- pointer-events-none absolute bottom-0 left-0 flex h-[14rem] w-full items-end justify-start bg-gradient-to-t ${pathname.includes('/projects/') ? currentProject?.twFade : 'from-white'} via-[30%] to-transparent`}
+        className={`pointer-events-none absolute bottom-0 left-0 flex h-56 w-full items-end justify-start bg-gradient-to-t ${pathname.includes('/projects/') ? currentProject?.twFade : 'from-white'} via-30% to-transparent`}
       ></div>
       {buttons.map((button, index) => (
         <Button key={index} button={button} className='z-10 min-w-[150px] text-white' />

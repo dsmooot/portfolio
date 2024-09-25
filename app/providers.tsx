@@ -11,7 +11,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     <TransitionRouter
       // auto={true}
       leave={(next, from, to) => {
-        console.log({ from, to })
+        // console.log({ from, to })
 
         const tl = gsap.timeline({
           onComplete: next,
@@ -54,7 +54,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     >
       <main className='relative size-full'>{children}</main>
 
-      <div ref={overlay} className='fixed inset-0 z-50 bg-black pointer-events-none' style={{ opacity: 0 }} />
+      <div ref={overlay} className='pointer-events-none fixed inset-0 z-50 bg-black' style={{ opacity: 0 }} />
     </TransitionRouter>
   )
 }

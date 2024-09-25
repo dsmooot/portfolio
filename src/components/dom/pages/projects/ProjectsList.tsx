@@ -54,7 +54,7 @@ const ProjectList = {
               </FilterButton>
             )}
           </div>
-          <div id='divider' className='h-[1px] w-full border-t border-t-gray-500 pb-4 xl:pb-8' />
+          <div id='divider' className='h-px w-full border-t border-t-gray-500 pb-4 xl:pb-8' />
         </>
       )
     },
@@ -75,7 +75,7 @@ const ProjectList = {
           }
         }
         return res
-      }, [projects, selectedCategory])
+      }, [selectedCategory])
 
       const { setCurrentProject } = useStore((state) => ({
         setCurrentProject: state.setCurrentProject,
@@ -90,7 +90,7 @@ const ProjectList = {
       }
 
       return (
-        <ul ref={ref} className='flex h-full w-full max-w-screen-xl flex-col overflow-y-scroll'>
+        <ul ref={ref} className='flex size-full max-w-screen-xl flex-col overflow-y-scroll'>
           {filteredProjects.map((project, index) => (
             <Link
               href={`/projects/${project.uri}`}
@@ -104,7 +104,7 @@ const ProjectList = {
             >
               <li
                 key={project.title}
-                className='group flex w-full transform flex-col gap-x-4 gap-y-4 overflow-visible py-4 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:flex-row xl:items-center'
+                className='group flex w-full transform flex-col gap-4 overflow-visible py-4 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:flex-row xl:items-center'
                 onMouseOver={() => handleEnter(project)}
                 onMouseLeave={() => handleLeave()}
               >
@@ -127,5 +127,9 @@ const ProjectList = {
     },
   ),
 }
+
+ProjectList.Header.displayName = 'ProjectListHeader'
+
+ProjectList.List.displayName = 'ProjectListList'
 
 export default ProjectList

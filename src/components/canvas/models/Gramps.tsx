@@ -26,4 +26,6 @@ const Gramps = forwardRef((props: JSX.IntrinsicElements['group'], ref) => {
 
 export default Gramps
 
+Gramps.displayName = 'Gramps'
+
 useGLTF.preload('/gramps.glb')

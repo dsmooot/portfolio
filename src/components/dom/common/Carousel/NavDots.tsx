@@ -50,7 +50,7 @@ export const DotButton: React.FC<PropType> = (props) => {
   return (
     <button
       type='button'
-      className={`tap-highlight-transparent inline-flex h-[2rem] w-[2rem] cursor-pointer appearance-none items-center justify-center rounded-full shadow-[inset_0_0_0_0.1rem_rgb(0,0,0)] ${className}`}
+      className={`tap-highlight-transparent inline-flex size-8 cursor-pointer appearance-none items-center justify-center rounded-full shadow-[inset_0_0_0_0.1rem_rgb(0,0,0)] ${className}`}
       {...restProps}
     >
       {children}

@@ -45,7 +45,7 @@ const Projects = () => {
     return () => {
       __lenis.off('scroll', onScroll)
     }
-  }, [__lenis, selectedCategory])
+  }, [__lenis, selectedCategory, isMobile, isTablet])
 
   useGSAP(() => {
     if (!once) return
@@ -138,7 +138,7 @@ const Projects = () => {
       <div className='flex w-full flex-col items-start justify-center gap-x-16 p-4 md:p-8 lg:p-16'>
         <div
           ref={headerContainerRef}
-          className='fixed left-0 top-0 z-10 flex w-full flex-row justify-center bg-transparent px-2 pt-4 sm:pr-4 md:pl-8 md:pr-8 md:pt-16 lg:px-16 xl:px-0 xl:pt-16'
+          className='fixed left-0 top-0 z-10 flex w-full flex-row justify-center bg-transparent px-2 pt-4 sm:pr-4 md:px-8 md:pt-16 lg:px-16 xl:px-0 xl:pt-16'
         >
           <div className='flex w-full max-w-screen-xl flex-col gap-y-8'>
             <Title id='work'>
@@ -154,13 +154,13 @@ const Projects = () => {
             />
           </div>
         </div>
-        <div className='my-[9.5rem] flex w-full flex-col items-center md:my-[12rem] lg:my-[16rem]'>
+        <div className='my-[9.5rem] flex w-full flex-col items-center md:my-48 lg:my-64'>
           <ProjectList.List ref={listRef} selectedCategory={selectedCategory} toggleGradient={toggleGradient} />
         </div>
       </div>
       <div
         id='fadeout'
-        className='pointer-events-none fixed bottom-0 left-0 flex h-[16rem] w-full items-end justify-start bg-gradient-to-t from-[#e3e3de] to-transparent'
+        className='pointer-events-none fixed bottom-0 left-0 flex h-64 w-full items-end justify-start bg-gradient-to-t from-[#e3e3de] to-transparent'
       ></div>
       {/* <div className='fixed bottom-0 left-0 w-full h-[16rem] flex justify-start items-end pointer-events-none bg-gradient-to-t from-[#41413f] to-transparent'></div> */}
       <Footer

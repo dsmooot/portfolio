@@ -89,19 +89,19 @@ const Contact = () => {
           >
             <Button
               button={{ text: 'DOWNLOAD MY RESUME' }}
-              className='min-w-[350px] border border-black bg-green-900 bg-opacity-70 px-8'
+              className='min-w-[350px] border border-black bg-green-900/70 px-8'
             />
           </a>
           <div id='socials' className='flex w-full flex-row items-center justify-center gap-x-8 xl:w-1/2'>
             <a
               href='mailto:dustinsmoote@gmail.com'
               target='_blank'
-              className='flex h-10 w-10 items-end justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:h-16 xl:w-16'
+              className='flex size-10 items-end justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
             >
               <EmailIcon />
             </a>
             <a
-              className='flex h-10 w-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:h-16 xl:w-16'
+              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
               href='https://github.com/dsmooot'
               target='_blank'
             >
@@ -110,7 +110,7 @@ const Contact = () => {
             <a
               href='https://www.linkedin.com/in/dustin-smoote/'
               target='_blank'
-              className='flex h-10 w-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:h-16 xl:w-16'
+              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
             >
               <LinkedInIcon />
             </a>

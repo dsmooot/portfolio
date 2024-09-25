@@ -11,9 +11,9 @@ type VideoProps = {
 
 const Video: React.FC<VideoProps> = ({ src, poster, autoplay = false, controls = true, loop = false }) => {
   return (
-    <div className='flex size-full flex-row items-center justify-center bg-black bg-opacity-30'>
+    <div className='flex size-full flex-row items-center justify-center bg-black/30'>
       <video
-        className='h-full w-full'
+        className='size-full'
         src={src}
         poster={poster}
         autoPlay={autoplay}

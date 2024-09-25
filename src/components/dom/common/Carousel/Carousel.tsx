@@ -26,7 +26,7 @@ const Carousel: React.FC = () => {
   return (
     <section className='mx-auto max-w-4xl'>
       <div className='overflow-hidden rounded-3xl' ref={emblaRef}>
-        <div className='-ml-[1rem] flex touch-pan-y rounded-3xl'>
+        <div className='-ml-4 flex touch-pan-y rounded-3xl'>
           {currentProject?.media?.map((media, index) => (
             <div
               className={cx(
