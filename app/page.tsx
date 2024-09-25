@@ -35,8 +35,7 @@ const Home = () => {
   }
 
   useGSAP(() => {
-    if (!containerRef.current || !loaded) return
-
+    if (!containerRef.current) return
     tlRef.current = gsap.timeline()
     tlRef.current.to(containerRef.current, {
       opacity: 1,
@@ -48,6 +47,8 @@ const Home = () => {
         })
       },
     })
+
+    if (!loaded) return
 
     gsap.set('#dustin .char:not(.char-d)', { opacity: 0, x: -50 })
     gsap.set('#smoote .char:not(.char-s)', { opacity: 0, x: -50 })
