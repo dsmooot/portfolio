@@ -38,6 +38,16 @@ const Home = () => {
     if (!containerRef.current || !loaded) return
 
     tlRef.current = gsap.timeline()
+    tlRef.current.to(containerRef.current, {
+      opacity: 1,
+      duration: 1,
+      ease: 'power1.inOut',
+      onStart: () => {
+        triggerEvent({
+          type: 'home-transition-in',
+        })
+      },
+    })
 
     gsap.set('#dustin .char:not(.char-d)', { opacity: 0, x: -50 })
     gsap.set('#smoote .char:not(.char-s)', { opacity: 0, x: -50 })
@@ -48,22 +58,11 @@ const Home = () => {
     gsap.set('#buttons', { opacity: 0 })
     gsap.set('.cta', {
       width: '64px', // Small width for the circle
-      borderRadius: '50%', // Makes it a circle
       opacity: 0,
     })
     gsap.set('#fadeout', { opacity: 0 })
 
     tlRef.current
-      .to(containerRef.current, {
-        opacity: 1,
-        duration: 1,
-        ease: 'power1.inOut',
-        onStart: () => {
-          triggerEvent({
-            type: 'home-transition-in',
-          })
-        },
-      })
       .to('#smoote', { y: 0, duration: 0.1, ease: 'ease.inOut' }, 0.5)
       .to('#dustin .char:not(.char-d)', { x: 0, opacity: 1, duration: 0.1, stagger: 0.05, ease: 'ease.inOut' }, 0.7)
       .to('#smoote .char:not(.char-s)', { x: 0, opacity: 1, duration: 0.1, stagger: 0.05, ease: 'ease.inOut' }, 0.7)
@@ -81,7 +80,7 @@ const Home = () => {
         '.cta',
         {
           width: isMobile ? '200px' : '250px',
-          borderRadius: '100px',
+          // borderRadius: '100px',
           opacity: 1,
           duration: 0.5,
           ease: 'power3.inOut',
@@ -173,7 +172,7 @@ const Home = () => {
                       await handleLeave()
                     },
                   }}
-                  className='cta text-white'
+                  className='cta rounded-full text-white'
                 />
               </li>
               <li>
@@ -185,7 +184,7 @@ const Home = () => {
                       await handleLeave()
                     },
                   }}
-                  className='cta text-white'
+                  className='cta rounded-full text-white'
                 />
               </li>
             </ul>
