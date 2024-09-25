@@ -21,7 +21,7 @@ This portfolio is a reflection of my work as a Web Developer, with a focus on in
 
 ## 📄 Resume and Contact Information
 
-You can find a comprehensive list of my technical skills, work experience, and education in my [resume](/resume.pdf). I am actively looking for new opportunities to collaborate and innovate, so feel free to reach out via [email](mailto:dustinsmoote@gmail.com).
+You can find a comprehensive list of my technical skills, work experience, and education in my [resume](./resume.pdf). I am actively looking for new opportunities to collaborate and innovate, so feel free to reach out via [email](mailto:dustinsmoote@gmail.com).
 
 ## 🧑‍💻 How to Run Locally
 
