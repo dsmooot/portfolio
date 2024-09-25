@@ -28,10 +28,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
-      NEXT_PUBLIC_ENV: production
-      DEBUG: 'next:*' # Enable verbose logging for Next.js build process
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
