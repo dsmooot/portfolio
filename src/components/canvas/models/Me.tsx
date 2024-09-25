@@ -19,8 +19,8 @@ type GLTFResult = GLTF & {
 }
 
 const Me = forwardRef((props: JSX.IntrinsicElements['group'], ref) => {
-  const { nodes, materials } = useGLTF('/me4.glb') as GLTFResult
-  const tex = useTexture('/img/waves-dark.png')
+  const { nodes, materials } = useGLTF('/me4-transformed.glb') as GLTFResult
+  // const tex = useTexture('/img/waves-dark.png')
   return (
     <group ref={ref as any} {...props} dispose={null}>
       <mesh
@@ -36,7 +36,7 @@ const Me = forwardRef((props: JSX.IntrinsicElements['group'], ref) => {
   )
 })
 
-useGLTF.preload('/me4.glb')
+useGLTF.preload('/me4-transformed.glb')
 
 Me.displayName = 'Character'
 
