@@ -196,7 +196,7 @@ const Home = () => {
                       await handleLeave()
                     },
                   }}
-                  className='cta rounded-full text-white'
+                  className='cta w-[200px] rounded-full text-white'
                 />
               </li>
               <li>
@@ -208,7 +208,7 @@ const Home = () => {
                       await handleLeave()
                     },
                   }}
-                  className='cta rounded-full text-white'
+                  className='cta w-[200px] rounded-full text-white'
                 />
               </li>
             </ul>
