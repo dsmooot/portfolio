@@ -9,7 +9,7 @@ export default function Scene({ children, ...props }: SceneProps) {
   const eventSource = useRef(null)
 
   return (
-    <div className='relative size-full' ref={eventSource}>
+    <div className='relative size-full !touch-auto' ref={eventSource}>
       <GlobalCanvas
         // globalRender={false}
         // scaleMultiplier is a scroll-rig setting to scale the entire scene

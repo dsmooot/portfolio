@@ -101,16 +101,16 @@ const Home = () => {
   }, [isMobile, loaded])
 
   return (
-    <div ref={containerRef} className='flex w-full flex-col opacity-0'>
+    <div ref={containerRef} className='relative flex size-full flex-col opacity-0'>
       <section
         id='hero'
-        className='flex h-screen w-full items-center justify-center gap-x-4 p-4 md:p-8 lg:gap-x-16 lg:p-16'
+        className='relative flex size-full items-center justify-center gap-x-4 p-4 md:p-8 lg:gap-x-16 lg:p-16'
       >
-        <div className='flex size-full max-w-screen-xl flex-col justify-between'>
-          <div
-            id='fadeout'
-            className='absolute -bottom-4 left-0 z-0 h-[50vh] w-full bg-gradient-to-t from-[#e3e3de] via-80% to-transparent md:h-[30vh] xl:h-[25vh] xl:via-60%'
-          ></div>
+        <div
+          id='fadeout'
+          className='absolute -bottom-4 left-0 z-0 h-[50%] w-full bg-gradient-to-t from-[#e3e3de] via-80% to-transparent md:h-[30vh] xl:h-[25vh] xl:via-60%'
+        ></div>
+        <div className='relative flex size-full max-w-screen-xl flex-col justify-between'>
           <div className='flex w-full flex-col items-start justify-start'>
             <Title id='dustin'>
               <span className='char char-d'>D</span>
@@ -151,7 +151,7 @@ const Home = () => {
               <span className='char char-t'>{']'}</span>
             </Tagline>
           </div>
-          <div className='flex w-full flex-col items-start justify-start gap-y-4 lg:gap-y-8 xl:gap-y-16'>
+          <div className='flex w-full flex-col items-start justify-start gap-y-8 xl:gap-y-16'>
             <div id='about' className='flex w-full flex-col items-start justify-start'>
               <Body className='z-10 w-full max-w-[700px]'>
                 {`Digital Nomad and Web Developer dedicated to creating interactive and engaging digital experiences. Continually learning through experimentation and iteration.`}
@@ -162,7 +162,7 @@ const Home = () => {
             </div>
             <ul
               id='buttons'
-              className='z-10 flex w-full max-w-[700px] flex-col items-center gap-y-4 opacity-0 md:flex-row md:justify-end md:gap-x-8 md:pr-8'
+              className='z-10 flex w-full max-w-[700px] flex-col items-center gap-y-4 md:flex-row md:justify-end md:gap-x-8 md:pr-8'
             >
               <li>
                 <Button
