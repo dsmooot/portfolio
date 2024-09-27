@@ -37,16 +37,39 @@ const Home = () => {
   useGSAP(() => {
     if (!containerRef.current) return
     tlRef.current = gsap.timeline()
-    tlRef.current.to(containerRef.current, {
-      opacity: 1,
-      duration: 1,
-      ease: 'power1.inOut',
-      onStart: () => {
-        triggerEvent({
-          type: 'home-transition-in',
-        })
-      },
-    })
+    tlRef.current
+      .to(containerRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+        onStart: () => {
+          triggerEvent({
+            type: 'home-transition-in',
+          })
+        },
+      })
+      .set('#buttons', { opacity: 1 })
+      .to(
+        '.cta',
+        {
+          width: isMobile ? '200px' : '250px',
+          // borderRadius: '100px',
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power3.inOut',
+          stagger: 0.1,
+        },
+        1.1,
+      )
+      .to(
+        '.cta',
+        {
+          color: 'white',
+          duration: 0.5,
+          ease: 'power1.inOut',
+        },
+        1.2,
+      )
 
     if (!loaded) return
 

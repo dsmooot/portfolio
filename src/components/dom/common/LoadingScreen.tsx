@@ -36,8 +36,8 @@ const LoadingScreen = () => {
           triggerEvent({ type: 'loaded' })
         },
         onComplete: () => {
-          containerRef.current.style.display = 'none'
           setVisible(false)
+          if (containerRef.current) containerRef.current.style.display = 'none'
         },
       })
       return
