@@ -1,15 +1,26 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from '@/core/lib/gsap'
 import { projects } from '@/core/data/projects'
 import Carousel from '@/components/dom/common/Carousel/Carousel'
 import Footer from '@/components/dom/common/Footer'
 import Button from '@/components/dom/common/Button'
 import { Body, Subtitle, Tagline, Title } from '@/components/dom/common/Themed'
+import useStore from '@/core/store'
 
 const Project = ({ params }: { params: { project: string } }) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const currentProject = projects[params.project]
+  const _currentProject = projects[params.project]
+  const { currentProject, setCurrentProject } = useStore((state) => ({
+    currentProject: state.currentProject,
+    setCurrentProject: state.setCurrentProject,
+  }))
+
+  useLayoutEffect(() => {
+    if (!currentProject) {
+      setCurrentProject(_currentProject)
+    }
+  }, [currentProject, setCurrentProject, _currentProject])
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -38,19 +49,19 @@ const Project = ({ params }: { params: { project: string } }) => {
       )
   }, [containerRef])
 
-  if (!currentProject) {
-    return <div>Project not found</div>
+  if (!_currentProject) {
+    return null
   }
 
   return (
     <div ref={containerRef} className='relative flex w-full flex-col p-8 lg:gap-y-8 lg:p-16 xl:items-center'>
-      {currentProject.href && (
+      {_currentProject.href && (
         <div className='fixed right-0 top-0 z-50 flex w-full justify-end pr-8 pt-8 lg:pr-16'>
           <Button
             button={{
               text: 'Visit Site →',
               onClick: () => {
-                window.open(currentProject.href, '_blank')
+                window.open(_currentProject.href, '_blank')
               },
             }}
             className='min-w-[120px] border border-black bg-white text-black transition-all duration-300 ease-in-out hover:bg-white hover:shadow-lg xl:bg-transparent'
@@ -60,7 +71,7 @@ const Project = ({ params }: { params: { project: string } }) => {
       <div className={`mb-8 flex w-full max-w-screen-xl flex-col gap-y-4 md:mb-12 lg:mt-auto lg:gap-y-8 xl:mb-16`}>
         <div className='flex flex-col gap-y-4'>
           <Title>
-            {currentProject.title.split('').map((char, index) => (
+            {_currentProject.title.split('').map((char, index) => (
               <span key={index} className='char'>
                 {char}
               </span>
@@ -69,10 +80,10 @@ const Project = ({ params }: { params: { project: string } }) => {
           <div className='flex flex-col gap-x-2 text-2xl xl:flex-row xl:items-center xl:gap-x-4'>
             <span className='stack-item mb-1 font-semibold'>{'Stack: '}</span>
             <div className='flex flex-row flex-wrap gap-x-2'>
-              {currentProject.stack.map((stack, index) => (
+              {_currentProject.stack.map((stack, index) => (
                 <Tagline className={'stack-item'} key={index}>
                   {stack}
-                  {index !== currentProject.stack.length - 1 && <span>{', '}</span>}
+                  {index !== _currentProject.stack.length - 1 && <span>{', '}</span>}
                 </Tagline>
               ))}
             </div>
@@ -82,16 +93,16 @@ const Project = ({ params }: { params: { project: string } }) => {
           <Carousel />
         </div>
         <Subtitle id='tagline' className='font-exo_2 text-2xl font-bold'>
-          {currentProject.tagline}
+          {_currentProject.tagline}
         </Subtitle>
         <Body id='summary' className={`w-full whitespace-pre-line text-xl font-medium`}>
-          {currentProject.summary}
+          {_currentProject.summary}
         </Body>
         <Subtitle id='contributions-header' className='font-exo_2 text-2xl font-bold'>
           MY CONTRIBUTIONS:
         </Subtitle>
         <Body id='contributions-text' className={`mb-24 w-full whitespace-pre-line text-xl font-medium`}>
-          {currentProject.contributions}
+          {_currentProject.contributions}
         </Body>
       </div>
       <Footer
