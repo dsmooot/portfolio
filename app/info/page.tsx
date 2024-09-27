@@ -85,7 +85,7 @@ const Contact = () => {
             as='link'
             id='resume'
             download={true}
-            button={{ text: 'DOWNLOAD MY RESUME', href: '/resume.pdf' }}
+            button={{ text: 'DOWNLOAD MY RESUME', href: '/resume_2024.pdf' }}
             className='min-w-[350px] border border-black bg-green-900/70 px-8'
           />
           <div id='socials' className='flex w-full flex-row items-center justify-center gap-x-8 xl:w-1/2'>
