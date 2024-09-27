@@ -65,7 +65,7 @@ const Contact = () => {
         </div>
         <div className='flex w-full flex-row items-center justify-start'>
           <div>
-            <Body id='blurb' style={{ lineHeight: 1.75 }}>
+            <Body id='blurb' style={{ lineHeight: 1.75 }} className='text-black'>
               {<b>{'Thanks for taking the time to view my portfolio.'}</b>}
               {
                 '\nI’ve carefully curated these projects to showcase my skills and capabilities.\nI hope they give you a clear understanding of both my experience and potential. \nIf you’d like to learn more about my background or how I can contribute to your ideas,\n'

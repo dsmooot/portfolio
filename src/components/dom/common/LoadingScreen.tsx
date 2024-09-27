@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import gsap, { useGSAP } from '@/core/lib/gsap'
 import { useProgress } from '@react-three/drei'
 import { Tagline } from './Themed'
@@ -12,6 +12,7 @@ const LoadingScreen = () => {
   const shadowRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const { triggerEvent } = useEvent()
+  const [visible, setVisible] = useState(true)
 
   useGSAP(() => {
     if (ballRef.current) {
@@ -26,14 +27,17 @@ const LoadingScreen = () => {
   }, [])
 
   useGSAP(() => {
-    if (progress === 100) {
+    if (progress === 100 && containerRef.current) {
       gsap.to(containerRef.current, {
         backgroundColor: '#000',
         opacity: 0,
-        duration: 0.5,
+        duration: 2,
+        onStart: () => {
+          triggerEvent({ type: 'loaded' })
+        },
         onComplete: () => {
           containerRef.current.style.display = 'none'
-          triggerEvent({ type: 'loaded' })
+          setVisible(false)
         },
       })
       return
@@ -83,50 +87,52 @@ const LoadingScreen = () => {
   }, [progress])
 
   return (
-    <div
-      ref={containerRef}
-      className={
-        'pointer-events-none fixed z-10 flex size-full flex-col items-center justify-center overflow-hidden bg-[#082b23]'
-      }
-    >
+    visible && (
       <div
-        ref={ballRef}
-        className='mb-16 rounded-full'
-        style={{
-          width: '100px',
-          height: '100px',
-          backgroundImage: "url('/img/waves-dark.png')",
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: '0% 0%',
-        }}
-      />
-      <div
-        ref={shadowRef}
-        className='bg-black'
-        style={{
-          width: '100px',
-          height: '20px',
-          bottom: '110px',
-          filter: 'blur(8px)',
-          opacity: 0.6,
-        }}
-      />
-      <div className='mb-16 flex flex-col items-center justify-center gap-y-4'>
-        <Tagline className='loading font-exo_2 text-white'>
-          {'Loading: '} {progress.toFixed(0)}
-        </Tagline>
+        ref={containerRef}
+        className={
+          'pointer-events-none fixed z-10 flex size-full flex-col items-center justify-center overflow-hidden bg-[#082b23]'
+        }
+      >
         <div
-          className='loading h-px w-full bg-white transition-all duration-75 ease-in-out'
+          ref={ballRef}
+          className='mb-16 rounded-full'
           style={{
-            width: `${progress}%`,
+            width: '100px',
+            height: '100px',
+            backgroundImage: "url('/img/waves-dark.png')",
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '0% 0%',
           }}
-        ></div>
-        {/* <div className='start flex flex-col items-center gap-y-4 opacity-0'>
+        />
+        <div
+          ref={shadowRef}
+          className='bg-black'
+          style={{
+            width: '100px',
+            height: '20px',
+            bottom: '110px',
+            filter: 'blur(8px)',
+            opacity: 0.6,
+          }}
+        />
+        <div className='mb-16 flex flex-col items-center justify-center gap-y-4'>
+          <Tagline className='loading font-exo_2 text-white'>
+            {'Loading: '} {progress.toFixed(0)}
+          </Tagline>
+          <div
+            className='loading h-px w-full bg-white transition-all duration-75 ease-in-out'
+            style={{
+              width: `${progress}%`,
+            }}
+          ></div>
+          {/* <div className='start flex flex-col items-center gap-y-4 opacity-0'>
           <Button button={{ text: 'Welcome', onClick: setStart }} className='bg-[#115a49] text-white shadow-lg' />
         </div> */}
+        </div>
       </div>
-    </div>
+    )
   )
 }
 
