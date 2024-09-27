@@ -54,7 +54,7 @@ const ProjectList = {
               </FilterButton>
             )}
           </div>
-          <div id='divider' className='h-px w-full border-t border-t-gray-500 pb-4 xl:pb-8' />
+          <div id='divider' className='h-px w-full border-t border-t-gray-500 xl:pb-8' />
         </>
       )
     },

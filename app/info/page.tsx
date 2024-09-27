@@ -80,7 +80,7 @@ const Contact = () => {
             </Body>
           </div>
         </div>
-        <div className='flex w-full flex-col items-center justify-center gap-y-8 lg:flex-row lg:justify-between'>
+        <div className='mb-32 flex w-full flex-col items-center justify-center gap-y-8 lg:flex-row lg:justify-between'>
           <a
             id={'resume'}
             href={'/'}

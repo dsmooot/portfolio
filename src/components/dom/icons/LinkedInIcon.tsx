@@ -1,14 +1,6 @@
 export default function LinkedInIcon() {
   return (
-    <svg
-      fill='#000000'
-      height='800px'
-      width='800px'
-      version='1.1'
-      id='Layer_1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 310 310'
-    >
+    <svg viewBox='0 0 310 310' xmlns='http://www.w3.org/2000/svg' className='h-full w-full'>
       <title>LinkedIn</title>
       <g id='XMLID_801_'>
         <path
