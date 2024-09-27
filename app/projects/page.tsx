@@ -138,7 +138,7 @@ const Projects = () => {
       <div className='flex w-full flex-col items-start justify-center gap-x-16 p-4 md:p-8 lg:p-16'>
         <div
           ref={headerContainerRef}
-          className='fixed left-0 top-0 z-10 flex w-full flex-row justify-center bg-transparent px-2 pt-4 sm:pr-4 md:px-8 md:pt-16 lg:px-16 xl:px-0 xl:pt-16'
+          className='fixed left-0 top-0 z-10 flex w-full flex-row justify-center bg-[#fcfcf4] px-2 pt-4 sm:pr-4 md:px-8 md:pt-16 lg:px-16 xl:bg-transparent xl:px-0 xl:pt-16'
         >
           <div className='flex w-full max-w-screen-xl flex-col gap-y-8'>
             <Title id='work'>

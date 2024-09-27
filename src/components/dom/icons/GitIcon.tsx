@@ -1,6 +1,11 @@
 export default function GitIcon() {
   return (
-    <svg viewBox='0 0 256 250' version='1.1' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid'>
+    <svg
+      viewBox='0 0 256 250'
+      xmlns='http://www.w3.org/2000/svg'
+      preserveAspectRatio='xMidYMid'
+      className='h-full w-full'
+    >
       <title>GitHub</title>
       <g>
         <path

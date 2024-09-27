@@ -1,7 +1,6 @@
 export default function EmailIcon() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 47.25 32'>
-      <defs></defs>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 47.25 32' className='h-full w-full'>
       <title>Email Me</title>
       <g>
         <g>
