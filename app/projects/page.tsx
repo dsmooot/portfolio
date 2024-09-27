@@ -22,8 +22,9 @@ const Projects = () => {
   const { isMobile, isTablet } = useDeviceType()
 
   useLayoutEffect(() => {
-    if (!__lenis || !headerContainerRef.current || !listRef.current) return
+    if (!__lenis) return
     __lenis.resize()
+    if (!headerContainerRef.current || !listRef.current) return
     const headerOffset = isMobile ? 132 : isTablet ? 148 : 100
     const headerHeight = headerContainerRef.current.getBoundingClientRect().height + headerOffset
     const listItems = listRef.current.querySelectorAll('li')
@@ -45,7 +46,7 @@ const Projects = () => {
     return () => {
       __lenis.off('scroll', onScroll)
     }
-  }, [__lenis, selectedCategory, isMobile, isTablet])
+  }, [__lenis, isMobile, isTablet])
 
   useGSAP(() => {
     if (!once) return
