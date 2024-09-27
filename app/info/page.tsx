@@ -95,12 +95,12 @@ const Contact = () => {
             <a
               href='mailto:dustinsmoote@gmail.com'
               target='_blank'
-              className='flex size-10 items-end justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
+              className='flex size-10 items-end justify-center transition-transform duration-300 ease-in-out xl:size-16 xl:hover:-translate-y-1 xl:hover:translate-x-2'
             >
               <EmailIcon />
             </a>
             <a
-              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
+              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out xl:size-16 xl:hover:-translate-y-1 xl:hover:translate-x-2'
               href='https://github.com/dsmooot'
               target='_blank'
             >
@@ -109,7 +109,7 @@ const Contact = () => {
             <a
               href='https://www.linkedin.com/in/dustin-smoote/'
               target='_blank'
-              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:size-16'
+              className='flex size-10 items-center justify-center transition-transform duration-300 ease-in-out xl:size-16 xl:hover:-translate-y-1 xl:hover:translate-x-2'
             >
               <LinkedInIcon />
             </a>

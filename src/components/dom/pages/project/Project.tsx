@@ -73,7 +73,7 @@ const Project = ({ params }: { params: { project: string } }) => {
                 window.open(_currentProject.href, '_blank')
               },
             }}
-            className='min-w-[120px] border border-black bg-white text-black transition-all duration-300 ease-in-out hover:bg-white hover:shadow-lg xl:bg-transparent'
+            className='min-w-[120px] border border-black bg-white text-black transition-all duration-300 ease-in-out xl:bg-transparent xl:hover:bg-white xl:hover:shadow-lg'
           />
         </div>
       )}

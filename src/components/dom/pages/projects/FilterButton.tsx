@@ -16,7 +16,7 @@ export default function FilterButton({
 }: IButtonProps) {
   return (
     <button
-      className={`w-[100px] rounded-full px-4 py-1 uppercase hover:bg-black hover:text-white ${isActive ? 'bg-black text-white' : 'border border-black bg-white text-black'} ${className}`}
+      className={`w-[100px] rounded-full px-4 py-1 uppercase lg:hover:bg-black lg:hover:text-white ${isActive ? 'bg-black text-white' : 'border border-black bg-white text-black'} ${className}`}
       {...props}
       onClick={onClick}
     >

@@ -104,7 +104,7 @@ const ProjectList = {
             >
               <li
                 key={project.title}
-                className='group flex w-full transform flex-col gap-4 overflow-visible py-4 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-2 xl:flex-row xl:items-center'
+                className='group flex w-full transform flex-col gap-4 overflow-visible py-4 transition-transform duration-300 ease-in-out xl:flex-row xl:items-center xl:hover:-translate-y-1 xl:hover:translate-x-2'
                 onMouseOver={() => handleEnter(project)}
                 onMouseLeave={() => handleLeave()}
               >
