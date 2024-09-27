@@ -7,6 +7,7 @@ import Footer from '@/components/dom/common/Footer'
 import Button from '@/components/dom/common/Button'
 import { Body, Subtitle, Tagline, Title } from '@/components/dom/common/Themed'
 import useStore from '@/core/store'
+import { useScrollbar } from '@14islands/r3f-scroll-rig'
 
 const Project = ({ params }: { params: { project: string } }) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -15,6 +16,14 @@ const Project = ({ params }: { params: { project: string } }) => {
     currentProject: state.currentProject,
     setCurrentProject: state.setCurrentProject,
   }))
+
+  const { __lenis } = useScrollbar()
+
+  useLayoutEffect(() => {
+    if (!__lenis) return
+    __lenis.resize()
+    __lenis.scrollTo(0)
+  }, [__lenis])
 
   useLayoutEffect(() => {
     if (!currentProject) {
