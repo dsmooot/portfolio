@@ -81,16 +81,13 @@ const Contact = () => {
           </div>
         </div>
         <div className='mb-32 flex w-full flex-col items-center justify-center gap-y-8 lg:flex-row lg:justify-between'>
-          <a
-            id={'resume'}
-            href={'/'}
-            //</div>href='/resume.pdf' download
-          >
-            <Button
-              button={{ text: 'DOWNLOAD MY RESUME' }}
-              className='min-w-[350px] border border-black bg-green-900/70 px-8'
-            />
-          </a>
+          <Button
+            as='link'
+            id='resume'
+            download={true}
+            button={{ text: 'DOWNLOAD MY RESUME', href: '/resume.pdf' }}
+            className='min-w-[350px] border border-black bg-green-900/70 px-8'
+          />
           <div id='socials' className='flex w-full flex-row items-center justify-center gap-x-8 xl:w-1/2'>
             <a
               href='mailto:dustinsmoote@gmail.com'
