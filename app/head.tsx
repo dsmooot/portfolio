@@ -1,4 +1,4 @@
-const title = `Dustin Smoote's Dev Portfolio`
+const title = `Dustin Smoote`
 const url = 'https://www.dustinsmoote.com'
 const description = `Dustin Smoote's Dev Portfolio`
 const author = 'Dustin Smoote'

@@ -148,7 +148,7 @@ const Scene = ({ scrollState, ...props }) => {
         />
       </group>
       <group visible={pathname === '/info'}>
-        <mesh {...props} position={[0, 0, 0]} scale={[viewport.width * 1.2, viewport.height * 1.2, 1]}>
+        <mesh {...props} position={[0, 0, 0]} scale={[viewport.width * 3, viewport.height * 1.2, 1]}>
           <planeGeometry args={[1, 1, 16, 16]} />
           <MeshWobbleMaterial map={texLight} speed={0.5} factor={0.5} />
         </mesh>
