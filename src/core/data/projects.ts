@@ -39,8 +39,8 @@ export const projects: Record<string, IProject> = {
     twFade: 'from-[#bb63c7]',
     twBg: 'bg-indigo-400 bg-opacity-70',
     media: [
-      { src: '/img/project/triptych-video.mp4', alt: 'triptych-1', type: 'video' },
-      { src: '/img/project/triptych-video-2.mp4', alt: 'triptych-2', type: 'video' },
+      { src: '/video/triptych-video.mp4', alt: 'triptych-1', type: 'video' },
+      { src: '/video/triptych-video-2.mp4', alt: 'triptych-2', type: 'video' },
     ],
   },
   'robin-knows': {
@@ -68,8 +68,8 @@ export const projects: Record<string, IProject> = {
     href: 'https://www.robinknows.app',
     twColor: 'group-hover:text-[#FE906A]',
     media: [
-      { src: '/img/project/robin-video.mp4', alt: 'robin-knows-1', type: 'video' },
-      { src: '/img/project/robin-video-2.mp4', alt: 'robin-knows-2', type: 'video' },
+      { src: '/video/robin-video.mp4', alt: 'robin-knows-1', type: 'video' },
+      { src: '/video/robin-video-2.mp4', alt: 'robin-knows-2', type: 'video' },
     ],
   },
   fbi: {
@@ -88,8 +88,8 @@ export const projects: Record<string, IProject> = {
     twFade: 'from-cyan-500',
     twBg: 'bg-cyan-500 bg-opacity-50',
     media: [
-      { src: '/img/project/fbi-video.mp4', alt: 'fbi-1', type: 'video' },
-      { src: '/img/project/fbi-video-2.mp4', alt: 'fbi-2', type: 'video' },
+      { src: '/video/fbi-video.mp4', alt: 'fbi-1', type: 'video' },
+      { src: '/video/fbi-video-2.mp4', alt: 'fbi-2', type: 'video' },
     ],
   },
   meta: {
@@ -108,8 +108,8 @@ export const projects: Record<string, IProject> = {
     twFade: 'from-sky-600',
     twBg: 'bg-sky-300 bg-opacity-50',
     media: [
-      { src: '/img/project/meta-video.mp4', alt: 'meta-1', type: 'video' },
-      { src: '/img/project/meta-video-2.mp4', alt: 'meta-2', type: 'video' },
+      { src: '/video/meta-video.mp4', alt: 'meta-1', type: 'video' },
+      { src: '/video/meta-video-2.mp4', alt: 'meta-2', type: 'video' },
     ],
   },
   northface: {
@@ -128,8 +128,8 @@ export const projects: Record<string, IProject> = {
     twFade: 'from-zinc-300',
     twBg: 'bg-amber-500 bg-opacity-50',
     media: [
-      { src: '/img/project/nf1.mp4', alt: 'northface-1', type: 'video' },
-      { src: '/img/project/nf2.mp4', alt: 'northface-2', type: 'video' },
+      { src: '/video/nf1.mp4', alt: 'northface-1', type: 'video' },
+      { src: '/video/nf2.mp4', alt: 'northface-2', type: 'video' },
     ],
   },
   sanctavia: {
@@ -147,8 +147,8 @@ export const projects: Record<string, IProject> = {
     twColor: 'group-hover:text-orange-500',
     twFade: 'from-[#f2b366]',
     media: [
-      { src: '/img/project/sanctavia-video-2.mp4', alt: 'sanctavia-1', type: 'video' },
-      { src: '/img/project/sanctavia-video.mp4', alt: 'sanctavia-2', type: 'video' },
+      { src: '/video/sanctavia-video-2.mp4', alt: 'sanctavia-1', type: 'video' },
+      { src: '/video/sanctavia-video.mp4', alt: 'sanctavia-2', type: 'video' },
     ],
   },
   'wind-river': {
@@ -166,8 +166,8 @@ export const projects: Record<string, IProject> = {
     twColor: 'group-hover:text-green-500',
     twFade: 'from-[#aed494]',
     media: [
-      { src: '/img/project/windriver-video.mp4', alt: 'wind-river-1', type: 'video' },
-      { src: '/img/project/windriver-video-2.mp4', alt: 'wind-river-2', type: 'video' },
+      { src: '/video/windriver-video.mp4', alt: 'wind-river-1', type: 'video' },
+      { src: '/video/windriver-video-2.mp4', alt: 'wind-river-2', type: 'video' },
     ],
   },
 
@@ -186,8 +186,8 @@ export const projects: Record<string, IProject> = {
     twColor: 'group-hover:text-red-500',
     twFade: 'from-[#d98f52]',
     media: [
-      { src: '/img/project/mastercard-video.mp4', alt: 'mastercard-1', type: 'video' },
-      { src: '/img/project/mastercard-video-2.mp4', alt: 'mastercard-2', type: 'video' },
+      { src: '/video/mastercard-video.mp4', alt: 'mastercard-1', type: 'video' },
+      { src: '/video/mastercard-video-2.mp4', alt: 'mastercard-2', type: 'video' },
     ],
   },
   'lumber-marketplace': {
@@ -206,12 +206,12 @@ export const projects: Record<string, IProject> = {
     twFade: 'from-[#7d6c57]',
     media: [
       {
-        src: '/img/project/lm-video-2.mp4',
+        src: '/video/lm-video-2.mp4',
         alt: 'lm-1',
         type: 'video',
       },
       {
-        src: '/img/project/lm-video.mp4',
+        src: '/video/lm-video.mp4',
         alt: 'lm-2',
         type: 'video',
       },
@@ -230,7 +230,7 @@ export const projects: Record<string, IProject> = {
     uri: 'panasonic',
     twColor: 'group-hover:text-blue-500',
     twFade: 'from-[#6994b8]',
-    media: [{ src: '/img/project/ult.mp4', alt: 'panasonic-1', type: 'video' }],
+    media: [{ src: '/video/ult.mp4', alt: 'panasonic-1', type: 'video' }],
   },
   epb: {
     title: 'EPB',
@@ -245,7 +245,7 @@ export const projects: Record<string, IProject> = {
     uri: 'epb',
     href: 'https://www.epb.com',
     twColor: 'group-hover:text-blue-500',
-    // media: [{ src: '/img/project/epb.mp4', alt: 'epb-1', type: 'video' }],
+    // media: [{ src: '/video/epb.mp4', alt: 'epb-1', type: 'video' }],
   },
   'spare-teeth': {
     title: 'Spare Teeth',
@@ -260,7 +260,7 @@ export const projects: Record<string, IProject> = {
     uri: 'spare-teeth',
     href: 'https://store.steampowered.com/app/1028340/Spare_Teeth_VR/',
     twColor: 'group-hover:text-cyan-500',
-    media: [{ src: '/img/project/st.mp4', alt: 'spare-teeth-1', type: 'video' }],
+    media: [{ src: '/video/st.mp4', alt: 'spare-teeth-1', type: 'video' }],
   },
   // volkswagen: {
   //   title: 'Volkswagen',

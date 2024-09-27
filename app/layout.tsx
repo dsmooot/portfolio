@@ -4,8 +4,8 @@ import '@/components/dom/common/Carousel/embla.css'
 import Head from './head'
 
 export const metadata = {
-  title: 'DUSTIN SM 👀TE',
-  description: "Dustin Smoote's Developer Portfolio",
+  title: 'DUSTIN SMOOTE',
+  description: 'Dustin Smoote',
 }
 
 export default function RootLayout({ children }) {
