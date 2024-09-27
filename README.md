@@ -30,7 +30,7 @@ To run the project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/portfolio-site.git
+git clone https://github.com/dsmooot/portfolio.git
 ```
 
 2. Install deps:
