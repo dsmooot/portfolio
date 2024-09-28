@@ -36,9 +36,7 @@ const Carousel: React.FC = () => {
               )}
               key={index}
             >
-              {media.type === 'video' && (
-                <Video src={media.src} autoplay loop controls={false} poster={placeholderImage.src} />
-              )}
+              {media.type === 'video' && <Video src={media.src} autoplay loop controls={false} poster={media.poster} />}
               {media.type === 'img' && <Image src={media.src} alt={media.alt} fill className='h-full object-cover' />}
             </div>
           ))}
