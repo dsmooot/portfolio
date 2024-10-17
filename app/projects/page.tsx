@@ -46,7 +46,7 @@ const Projects = () => {
     return () => {
       __lenis.off('scroll', onScroll)
     }
-  }, [__lenis, isMobile, isTablet])
+  }, [__lenis, isMobile, isTablet, selectedCategory])
 
   useGSAP(() => {
     if (!once) return
