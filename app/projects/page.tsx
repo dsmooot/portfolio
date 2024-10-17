@@ -64,7 +64,7 @@ const Projects = () => {
     if (!containerRef.current) return
     const tl = gsap.timeline()
     gsap.set(containerRef.current, { opacity: 0 })
-    gsap.set(headerContainerRef.current, { opacity: 0 })
+    gsap.set(headerContainerRef.current, { opacity: 0, backgroundColor: '#ffffff00' })
     gsap.set(headerRef.current, { opacity: 0 })
     gsap.set('#work .char', { opacity: 0, x: -50 })
     gsap.set(['.filter'], { opacity: 0, x: -50 })
@@ -124,7 +124,19 @@ const Projects = () => {
         },
         0.5,
       )
-  }, [containerRef])
+
+    if (isMobile || isTablet) {
+      tl.to(
+        headerContainerRef.current,
+        {
+          backgroundColor: '#fcfcf4',
+          duration: 3,
+          ease: 'ease.inOut',
+        },
+        0,
+      )
+    }
+  }, [containerRef, isMobile, isTablet])
 
   const toggleGradient = () => {
     gsap.to('#fadeout', {
