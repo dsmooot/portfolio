@@ -2,7 +2,7 @@
 
 import MainScene from '@/components/canvas/MainScene'
 import dynamic from 'next/dynamic'
-import { Suspense, use, useLayoutEffect } from 'react'
+import { Suspense, useEffect, useLayoutEffect } from 'react'
 import { TransitionProvider } from '@/providers'
 import { EventProvider, useEvent } from '@/core/context/EventProvider'
 import LoadingScreen from './LoadingScreen'
