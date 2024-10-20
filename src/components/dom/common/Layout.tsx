@@ -35,9 +35,6 @@ const NavigationEventHandler = () => {
 }
 
 const Layout = ({ children }) => {
-  useEffect(() => {
-    console.log('TEST -> GTAG:', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID)
-  }, [])
   return (
     <Suspense fallback={null}>
       <Providers>
