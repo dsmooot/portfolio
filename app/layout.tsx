@@ -2,6 +2,7 @@ import { Layout } from '@/components/dom/common/Layout'
 import '@/global.css'
 import '@/components/dom/common/Carousel/embla.css'
 import Head from './head'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
   title: 'DUSTIN SMOOTE',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
         <Layout>{children}</Layout>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
     </html>
   )
 }
