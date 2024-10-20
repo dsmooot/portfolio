@@ -30,6 +30,13 @@ export default function Head() {
       <meta property='og:site_name' content={title} />
       <meta property='og:description' content={description} />
 
+      {/* Twitter Meta Tags */}
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta name='twitter:site' content='@DustinSmoote' />
+      <meta name='twitter:title' content={title} />
+      <meta name='twitter:description' content={description} />
+      <meta name='twitter:image' content={`${url}/icons/waves-dark-twitter.png`} />
+
       {/* Favicon Links */}
       <link rel='icon' sizes='16x16' href='/icons/favicon-16x16.png' />
       <link rel='icon' sizes='32x32' href='/icons/favicon-32x32.png' />
