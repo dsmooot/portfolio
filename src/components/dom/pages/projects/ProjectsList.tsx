@@ -90,7 +90,7 @@ const ProjectList = {
       }
 
       return (
-        <ul ref={ref} className='flex size-full max-w-screen-xl flex-col overflow-y-scroll'>
+        <ul ref={ref} className='flex size-full max-w-screen-xl flex-col'>
           {filteredProjects.map((project, index) => (
             <Link
               href={`/projects/${project.uri}`}
